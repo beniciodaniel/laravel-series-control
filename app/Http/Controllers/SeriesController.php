@@ -12,8 +12,17 @@ use App\Services\RemovedorDeSerie;
 use App\Temporada;
 use Illuminate\Http\Request;
 
-class SeriesController
+
+
+class SeriesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index (Request $request){
 //        echo $request->url();
         $series = Serie::query()

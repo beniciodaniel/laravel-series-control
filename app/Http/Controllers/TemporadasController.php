@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class TemporadasController extends Controller
 {
+
     //pegou o serieId da Route(get)/series/{serieId}/temporadas
     public function index(int $serieId)
     {
