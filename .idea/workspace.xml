@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4951ab48-7d6e-4944-8591-724f9fcdea69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/database/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="4951ab48-7d6e-4944-8591-724f9fcdea69" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,6 +236,11 @@
               <item name="laravel-series-control" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-series-control" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="laravel-series-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-series-control" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -286,18 +289,17 @@
       <option name="presentableId" value="Default" />
       <updated>1572181938494</updated>
       <workItem from="1572181940933" duration="9758000" />
-      <workItem from="1572230894509" duration="1365000" />
+      <workItem from="1572230894509" duration="1696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11123000" />
+    <option name="totallyTimeSpent" value="11454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="-540" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19023034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19023034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -312,7 +314,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3293944" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3293944" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
