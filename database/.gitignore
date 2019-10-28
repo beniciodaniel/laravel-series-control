@@ -1,3 +1,5 @@
 *.sqlite
 *.sqlite-journal
-*.env
+.env
+vendor/
+.env.php
