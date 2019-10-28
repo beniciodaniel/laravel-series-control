@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/series', 'SeriesController@index')->name('series.index');
+Route::get('/series', 'SeriesController@index')
+    ->name('series.index')
+    ->middleware('auth');
 Route::get('/series/create', 'SeriesController@create')->name('series.create');
 Route::post('/series/create', 'SeriesController@store');
 Route::post('/series/{id}', 'SeriesController@destroy');
@@ -27,3 +29,7 @@ Route::get('/series/{serieId}/temporadas', 'TemporadasController@index');
 Route::get('/temporadas/{temporada}/episodios', 'EpisodiosController@index');
 Route::post('/temporadas/{temporada}/episodios/assistidos', 'EpisodiosController@assistidos');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
