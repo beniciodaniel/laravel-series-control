@@ -18,6 +18,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/series', 'SeriesController@index')
     ->name('series.index')
     ->middleware('auth');
+
 Route::get('/series/create', 'SeriesController@create')->name('series.create');
 Route::post('/series/create', 'SeriesController@store');
 Route::post('/series/{id}', 'SeriesController@destroy');
@@ -34,8 +35,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/entrar', 'EntrarController@index');
+Route::get('/entrar', 'EntrarController@index')->name('entrar');
 Route::post('/entrar', 'EntrarController@entrar');
 
 Route::get('/registrar', 'RegistroController@create');
 Route::post('/registrar', 'RegistroController@store');
+
+Route::get('/sair', function () {
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect()->route('entrar');
+});

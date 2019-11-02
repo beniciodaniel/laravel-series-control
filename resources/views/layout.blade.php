@@ -12,6 +12,11 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="{{ route('series.index') }}">home </a>
+        <a href="/sair" class="text-danger">sair</a>
+    </nav>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1>
