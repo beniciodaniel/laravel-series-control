@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CriadorDeSerie
@@ -17,11 +18,12 @@ class CriadorDeSerie
         int $epPorTemporada
     ) : Serie // metodo retorna uma Serie
     {
-        //a validação de quem pode realizar a requisição de adicionar séries, foi para o Requests/SeriesFormRequest
+        //a validação da requisição de adicionar séries (campos), foi para o Requests/SeriesFormRequest
         //inserindo no banco de dados
-
+        //pegando id do user p/ preencher o campo user_id da serie e com isso poder pegar serie de cada usuario
+        $userId = Auth::id();
         DB::beginTransaction();
-            $serie = Serie::create(['nome' => $nomeSerie]);
+            $serie = Serie::create(['nome' => $nomeSerie, 'user_id' => $userId]);
             $this->criaTemporadas($qtdTemporadas, $epPorTemporada, $serie); //cria temporadas E OS EPISÓDIOS
         DB::commit();
 

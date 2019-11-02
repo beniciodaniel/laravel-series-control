@@ -11,7 +11,8 @@ use App\Services\CriadorDeSerie;
 use App\Services\RemovedorDeSerie;
 use App\Temporada;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class SeriesController extends Controller
@@ -25,9 +26,19 @@ class SeriesController extends Controller
 
     public function index (Request $request){
 //        echo $request->url();
+
+        $userId = Auth::id();
+//        dd($userId);
+
+//        $series = DB::table('series')->where('user_id', $userId)->get();
+//        dd($series);
+
         $series = Serie::query()
+            ->where('user_id', '=', $userId)
             ->orderBy('nome')
             ->get();
+//        dd($series);
+
 
         $mensagem = $request->session()->get('mensagem');
 
@@ -50,6 +61,7 @@ class SeriesController extends Controller
             $request->nome,
             $request->qtd_temporadas,
             $request->ep_por_temporada
+
         );
         //pegando a sessão da requisição para salvar uma mensagem para o outro método(@index) pegar esta mensagem enviar para a BLADE
                                     //chave     //valor

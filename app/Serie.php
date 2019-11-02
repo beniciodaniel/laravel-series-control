@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Serie extends Model
 {
     protected $fillable = [
-      'nome'
+        //user_id do usuario autenticado p/ cada serie ter seu proprio usuario
+      'nome', 'user_id'
     ];
 
     public function temporadas()
