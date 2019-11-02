@@ -8,8 +8,10 @@
 
     @include('mensagem', ['mensagem' => $mensagem])
 
+    @auth
 {{--    <a href="/series/create" class="btn btn-dark mb-2">Adicionar</a>--}}
     <a href="{{route('series.create')}}" class="btn btn-dark mb-2">Adicionar</a>
+    @endauth
 
     <ul class="list-group list-group-flush">
         @foreach ($series as $serie)
@@ -34,9 +36,11 @@
 
                 <span class="d-flex">
 {{--                    botao editar--}}
+                    @auth
                     <button class="btn btn-dark btn-sm mr-1"        onclick="toggleInput({{$serie->id}})">
                         <i class="material-icons"> edit </i>
                     </button>
+                    @endauth
 
 {{--                    botao launch--}}
                     <a href="/series/{{$serie->id}}/temporadas" class="btn btn-info btn-sm mr-1">
@@ -45,6 +49,7 @@
                         </i>
                     </a>
 
+                    @auth
 {{--                    botao de delete dentro de um FORM p/ nao ter DOM CRAWLER apagando os dados sozinho--}}
                     <form method="post" action="/series/{{$serie->id}}" onsubmit="confirm('Tem certeza que deseja excluir {{addslashes($serie->nome)}}')">
                         @csrf
@@ -54,6 +59,7 @@
                             </i>
                         </button>
                     </form>
+                    @endauth
 
                 </span>
 

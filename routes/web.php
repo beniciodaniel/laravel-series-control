@@ -16,19 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WelcomeController@index');
 
 Route::get('/series', 'SeriesController@index')
-    ->name('series.index')
+    ->name('series.index');
+
+Route::get('/series/create', 'SeriesController@create')
+    ->name('series.create')
     ->middleware('auth');
 
-Route::get('/series/create', 'SeriesController@create')->name('series.create');
-Route::post('/series/create', 'SeriesController@store');
-Route::post('/series/{id}', 'SeriesController@destroy');
+Route::post('/series/create', 'SeriesController@store')
+    ->middleware('auth');
 
-Route::post('/series/{id}/editaNome', 'SeriesController@editaNome');
+Route::post('/series/{id}', 'SeriesController@destroy')
+    ->middleware('auth');
+
+Route::post('/series/{id}/editaNome', 'SeriesController@editaNome')
+    ->middleware('auth');
 
 Route::get('/series/{serieId}/temporadas', 'TemporadasController@index');
 
 Route::get('/temporadas/{temporada}/episodios', 'EpisodiosController@index');
-Route::post('/temporadas/{temporada}/episodios/assistidos', 'EpisodiosController@assistidos');
+Route::post('/temporadas/{temporada}/episodios/assistidos', 'EpisodiosController@assistidos')
+    ->middleware('auth');
 
 
 Auth::routes();

@@ -22,9 +22,11 @@
             @endforeach
         </ul>
 
+        @auth
         <div class="d-flex justify-content-end">
             <button class="btn btn-primary mt-2 mb-2">salvar</button>
         </div>
+        @endauth
     </form>
 
 
