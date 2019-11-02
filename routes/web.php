@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Route;
+App\Http\Middleware\Authenticate::class;
 
 Route::get('/', 'WelcomeController@index');
 
@@ -20,32 +21,31 @@ Route::get('/series', 'SeriesController@index')
 
 Route::get('/series/create', 'SeriesController@create')
     ->name('series.create')
-    ->middleware('auth');
+    ->middleware('autenticador');
 
 Route::post('/series/create', 'SeriesController@store')
-    ->middleware('auth');
+    ->middleware('autenticador');
 
 Route::post('/series/{id}', 'SeriesController@destroy')
-    ->middleware('auth');
+    ->middleware('autenticador');
 
 Route::post('/series/{id}/editaNome', 'SeriesController@editaNome')
-    ->middleware('auth');
+    ->middleware('autenticador');
 
 Route::get('/series/{serieId}/temporadas', 'TemporadasController@index');
 
 Route::get('/temporadas/{temporada}/episodios', 'EpisodiosController@index');
 Route::post('/temporadas/{temporada}/episodios/assistidos', 'EpisodiosController@assistidos')
-    ->middleware('auth');
+    ->middleware('autenticador');
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/entrar', 'EntrarController@index')->name('entrar');
 Route::post('/entrar', 'EntrarController@entrar');
 
-Route::get('/registrar', 'RegistroController@create');
+Route::get('/registrar', 'RegistroController@create')->name('registrar');
 Route::post('/registrar', 'RegistroController@store');
 
 Route::get('/sair', function () {
