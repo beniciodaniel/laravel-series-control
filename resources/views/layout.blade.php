@@ -12,6 +12,17 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="{{ route('series.index') }}">home </a>
+        @auth
+            <a href="/sair" class="text-danger">sair</a>
+        @endauth
+
+        @guest
+            <a href="{{route('entrar')}}" class="text-primary">entrar</a>
+        @endguest
+    </nav>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1>
